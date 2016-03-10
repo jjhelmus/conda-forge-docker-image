@@ -4,7 +4,7 @@ MAINTAINER Jonathan J. Helmus <jjhelmus@gmail.com>
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
-ENV PATH /opt/rh/devtoolset-2/root/usr/bin:$PATH
+ENV PATH /opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:$PATH
 ENV LD_LIBRARY_PATH /opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib
 
 COPY build_scripts /build_scripts

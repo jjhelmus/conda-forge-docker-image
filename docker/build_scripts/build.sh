@@ -35,6 +35,22 @@ yum -y erase wireless-tools gtk2 libX11 hicolor-icon-theme \
 yum -y install ${MANYLINUX1_DEPS}
 yum -y clean all > /dev/null 2>&1
 
+# Install Miniconda
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    --no-verbose
+bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
+rm Miniconda*.sh
+
+# configure conda
+export PATH=/opt/conda/bin:$PATH
+conda config --set show_channel_urls True
+conda update --all --yes
+
+# install build tools
+conda install --yes -c pelson/channel/development obvious-ci
+obvci_install_conda_build_tools.py
+conda clean -t -p
+
 # print out all installed packages, and then again by size
 yum list installed
 rpm -qa --queryformat '%10{size} - %-25{name} \t %{version}\n' | sort -n
