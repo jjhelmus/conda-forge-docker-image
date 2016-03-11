@@ -25,12 +25,6 @@ yum -y install bzip2 make git patch unzip bison yasm diffutils \
     devtoolset-2-binutils devtoolset-2-gcc \
     devtoolset-2-gcc-c++ devtoolset-2-gcc-gfortran
 
-# Install patchelf
-curl -sLO http://nixos.org/releases/patchelf/patchelf-0.8/patchelf-0.8.tar.gz
-tar -xzf patchelf-0.8.tar.gz
-(cd patchelf-0.8 && ./configure && make && make install)
-rm -rf patchelf-0.8.tar.gz patchelf-0.8
-
 # Clean up development headers and other unnecessary stuff for
 # final image
 yum -y erase wireless-tools gtk2 libX11 hicolor-icon-theme \
