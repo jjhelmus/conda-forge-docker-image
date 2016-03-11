@@ -4,6 +4,9 @@
 # Stop at any error, show all commands
 set -ex
 
+# Install only the x86_64 packages
+echo "multilib_policy=best" >> /etc/yum.conf
+
 # Libraries that are allowed as part of the manylinux1 profile
 MANYLINUX1_DEPS="glibc-devel libstdc++-devel glib2-devel libX11-devel libXext-devel libXrender-devel  mesa-libGL-devel libICE-devel libSM-devel ncurses-devel"
 
@@ -32,6 +35,7 @@ rm -rf patchelf-0.8.tar.gz patchelf-0.8
 # final image
 yum -y erase wireless-tools gtk2 libX11 hicolor-icon-theme \
     avahi freetype bitstream-vera-fonts > /dev/null 2>&1
+
 yum -y install ${MANYLINUX1_DEPS}
 yum -y clean all > /dev/null 2>&1
 
