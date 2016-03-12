@@ -10,26 +10,26 @@ show_channel_urls: True
 conda clean --lock
 conda info
 
-#export CONDA_NPY=110
-#export CONDA_PY=27
-#conda build /tests/arm_pyart --quiet
+export CONDA_NPY=110
+export CONDA_PY=27
+conda build /tests/arm_pyart --quiet
 
-#export CONDA_NPY=19
-#export CONDA_PY=27
-#conda build /tests/arm_pyart --quiet
+export CONDA_NPY=19
+export CONDA_PY=27
+conda build /tests/arm_pyart --quiet
 
-#export CONDA_NPY=110
-#export CONDA_PY=34
-#conda build /tests/arm_pyart --quiet
+export CONDA_NPY=110
+export CONDA_PY=34
+conda build /tests/arm_pyart --quiet
 
-#export CONDA_NPY=19
-#export CONDA_PY=34
-#conda build /tests/arm_pyart --quiet
+export CONDA_NPY=19
+export CONDA_PY=34
+conda build /tests/arm_pyart --quiet
 
 export CONDA_NPY=110
 export CONDA_PY=35
 conda build /tests/arm_pyart --quiet
 
-#export CONDA_NPY=19
-#export CONDA_PY=35
-#conda build /tests/arm_pyart --quiet
+export CONDA_NPY=19
+export CONDA_PY=35
+conda build /tests/arm_pyart --quiet
